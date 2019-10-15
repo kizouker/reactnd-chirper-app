@@ -4,10 +4,10 @@ class NewTweet extends Component {
   render() {
     return (
       <div>
-        Starter Code
+        NewTweet
       </div>
     )
   }
 }
 
-export default NewTweet
+export default NewTweet;

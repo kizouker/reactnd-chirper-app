@@ -1,0 +1,3 @@
+git remote add origin https://github.com/kizouker/reactnd-chirper-app
+git push --set-upstream origin master
+git remote -v

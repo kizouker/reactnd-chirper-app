@@ -5,6 +5,26 @@ body {
   color: #252525;
 }
 
+
+.header {
+  background-color: #F1F1F1;
+  text-align: center;
+  padding: 20px;
+  border-style: solid;
+  border-width: 10px;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #F1F1F1;
+  text-align: left;
+  padding: 30px;
+  border-style: solid;
+  border-width: 10px;
+}
+
+
 a {
   text-decoration: none;
   color: #252525;

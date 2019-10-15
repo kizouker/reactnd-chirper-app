@@ -4,10 +4,10 @@ class Navigation extends Component {
   render() {
     return (
       <div>
-        Starter Code
+       Navigation
       </div>
     )
   }
 }
 
-export default Navigation
+export default Navigation;

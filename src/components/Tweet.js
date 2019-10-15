@@ -4,10 +4,10 @@ class Tweet extends Component {
   render() {
     return (
       <div>
-        Starter Code
+       Tweet
       </div>
     )
   }
 }
 
-export default Tweet
+export default Tweet;

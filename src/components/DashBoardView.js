@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
-import 
+import Tweet from './Tweet';
+import TweetList from './TweetList';
+import Navigation from './Navigation';
 
-class DashBoard extends Component {
+class DashBoardView extends Component {
   render() {
     return (
       <div>
-        Starter Code
+     DashBoardView
       </div>
     )
   }
 }
 
-export default DashBoard
+export default DashBoardView;
