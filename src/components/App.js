@@ -13,14 +13,58 @@ class App extends React.Component {
           <h1>Twitter clone - Chirper</h1>     
         </div>
         <div class="topnav">
-          <h1>Menu</h1>     
+          <h3>Menu</h3>     
         </div>
 
-        
-        
-        <DashBoardView> </DashBoardView>
-        <NewTweetView></NewTweetView>
+        <div class="column side">
+        <h2>Side</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+          Maecenas sit amet pretium urna. Vivamus venenatis velit 
+          nec neque ultricies, eget elementum magna tristique. 
+          Quisque vehicula, risus eget aliquam placerat, purus 
+          leo tincidunt eros, eget luctus quam orci in velit. 
+          Praesent scelerisque tortor sed accumsan convallis.  
+          </p>   
+        </div>
+
+        <div class="column middle">
+        <h2>middle</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+          Maecenas sit amet pretium urna. Vivamus venenatis velit 
+          nec neque ultricies, eget elementum magna tristique. 
+          Quisque vehicula, risus eget aliquam placerat, purus 
+          leo tincidunt eros, eget luctus quam orci in velit. 
+          Praesent scelerisque tortor sed accumsan convallis.  
+          </p>   
+        </div>
+
+        <div class="column side">
+        <h2>Side</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+          Maecenas sit amet pretium urna. Vivamus venenatis velit 
+          nec neque ultricies, eget elementum magna tristique. 
+          Quisque vehicula, risus eget aliquam placerat, purus 
+          leo tincidunt eros, eget luctus quam orci in velit. 
+          Praesent scelerisque tortor sed accumsan convallis.  
+          </p>   
+        </div>
+
+
+        <div class="footer">
+          <h3>footer</h3>
+          <p>
+          Quisque vehicula, risus eget aliquam placerat, purus 
+          leo tincidunt eros, eget luctus quam orci in velit. 
+          </p>
+        </div>
+       
+       // <DashBoardView> </DashBoardView>
+       // <NewTweetView></NewTweetView>
         <TweetView></TweetView>
+        -->
       </div>
     )
   }
