@@ -2,13 +2,55 @@ import React from 'react'
 
 import DashBoardView from './DashBoardView';
 import NewTweetView from './NewTweetView'
-import TweetView from './TweetView'
+import Tweet from './Tweet'
+import NewTweet from './NewTweet'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
 
 
 class App extends React.Component {
   render() {
-    return (
+    return ( <Router>
       <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/new">New Tweet</Link>
+            </li>
+            <li>
+              <Link to="/dashboard">DashBoard</Link>
+            </li>
+          </ul>
+        </nav>
+
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+   
+   
+       
+          <Route path="/">
+            <Tweet />
+          </Route>
+
+          <Route path="/new">
+            <NewTweet/>
+          </Route>
+          <Route path="/dashboard">
+          </Route>  
+
+    
+      </div>
+    </Router>);
+  
+      // <div>
       {/*   <div class="header">
           <h1>Twitter clone - Chirper</h1>     
         </div>
@@ -62,7 +104,9 @@ class App extends React.Component {
         </div>
         */}
 
-          <div class="wrapper">
+        
+
+          {/* <div class="wrapper">
             <div class="box header">tWITTER cLONE</div>
             <div class="box navbar">Navbar</div>
             <div class="box sidebar">Sidebar</div>
@@ -97,7 +141,7 @@ Labore proident ipsum dolor ex est officia nisi cillum aliquip. Anim nisi dolor 
         <TweetView></TweetView>
         -->
       </div>
-    )
+    ) */}
   }
 }
 
