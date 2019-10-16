@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
+import NewTweet from './NewTweet'
 
 class NewTweetView extends Component {
   render() {
     return (
       <div>
-        NewTweetView
+        <NewTweet></NewTweet>
       </div>
     )
   }
