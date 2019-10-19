@@ -4,7 +4,7 @@ class TweetList extends Component {
   render() {
     return (
       <div>
-        Starter Code
+        TweetList
       </div>
     )
   }

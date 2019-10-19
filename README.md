@@ -18,3 +18,38 @@ If you feel like there's a major problem, please open an issue to discuss the pr
 ## License
 
 MIT
+
+
+## Define Views
+DashBoard
+Tweet View
+New Tweet
+
+## Define components in each view
+
+Comp
+- Nav
+- Tweet
+- TweetList
+- TweetContainer
+- NewTweet
+- App
+
+- code down statically every comp
+- define the state in state or store
+- add dynamic - actions - reducer to each comp
+
+
+
+## Components
+- write on a post-it
+- write connections
+
+
+## UX - Design Sprints
+personas
+wire-frame
+prototype
+
+miro 
+figma
