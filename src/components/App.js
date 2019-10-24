@@ -21,9 +21,13 @@ class App extends React.Component {
   }
 
   render() {
+    console.log(this.props.store)
     return ( 
     <div>
-    <Router>
+      {this.props.loading === true
+        ? null
+        : <DashBoardView tweets={this.props.store.tweets}/> }
+    {/* <Router>
       <div>
         <nav>
           <ul>
@@ -52,11 +56,18 @@ class App extends React.Component {
 
     
       </div>
-    </Router>
-    <DashBoardView/>
+    </Router> */}
+ 
     </div>)
   
   }
 }
 
-export default connect()(App);
+function mapStateToProps({ authedUser }) {
+
+  return {
+    loading : authedUser === null
+  }
+}
+
+export default connect(mapStateToProps)(App);

@@ -8,18 +8,22 @@ import { Provider } from 'react-redux';
 import reducer from './reducers'
 import middleware from './middleware'
 
-const store = createStore(
-    reducer, middleware
-)
+const store = createStore(reducer, middleware)
 
-
-const router =  
+const router2 =  
     <Provider store={store}>
         <Router>
             <App/>            
         </Router>
     </Provider>;
 
+const router =  
+<Provider store={store}>
+     <App/>            
+</Provider>;
+
 ReactDOM.render(router, document.getElementById('root'));
+
+
 
 // ReactDOM.render(<App />, document.getElementById('root'))
