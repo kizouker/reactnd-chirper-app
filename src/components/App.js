@@ -13,20 +13,21 @@ import {
 import { connect } from 'react-redux'
 
 import { handleInitialData } from '../actions/shared'
-
+  
 
 class App extends React.Component {
   componentDidMount(){
-    this.props.dispatch(handleInitialData)
+    this.props.dispatch(handleInitialData());
   }
 
   render() {
-    console.log(this.props.store)
+ //   console.log(this.props.store)
     return ( 
     <div>
+      
       {this.props.loading === true
         ? null
-        : <DashBoardView tweets={this.props.store.tweets}/> }
+        : <DashBoardView/> }
     {/* <Router>
       <div>
         <nav>

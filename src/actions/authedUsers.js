@@ -1,4 +1,4 @@
-export const { AUTHED_USER } = 'AUTHED_USER';
+export const AUTHED_USER = 'AUTHED_USER';
 
 export function setAuthedUsers(id){
     return {

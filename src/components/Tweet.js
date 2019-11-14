@@ -12,7 +12,7 @@ class Tweet extends Component {
     return (
       <div className="tweet">
        Tweet
-       {console.log(this.props)}
+       {console.log(this.props.store.tweets)}
       </div>
     )
   }
