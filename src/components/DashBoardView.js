@@ -15,10 +15,7 @@ class DashBoardView extends Component {
           {console.log(this.props.tweetIds)}
           {this.props.tweetIds.map((id) => (
             <li key={id}>
-              <div>
-                TWEET id: {id}
-              </div>
-              <Tweet id={id} />
+              <Tweet id={id}/>
             </li>
           ))}
           </ul>
@@ -31,6 +28,8 @@ class DashBoardView extends Component {
 export default connect(mapStateToProps)(DashBoardView);
 
 function mapStateToProps( {tweets} ){
-  return { tweetIds: Object.keys(tweets).sort((a,b) => tweets[b].timestamp - tweets[a].timestamp)
+  return { 
+      tweetIds: Object.keys(tweets).sort((a,b) => tweets[b].timestamp - tweets[a].timestamp),
+      tweets: tweets
     }
   };

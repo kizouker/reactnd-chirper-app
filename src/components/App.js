@@ -25,26 +25,14 @@ class App extends React.Component {
     return ( 
     <div>
       
-      {this.props.loading === true
+      {/* {this.props.loading === true
         ? null
-        : <DashBoardView/> }
-    {/* <Router>
+        : <DashBoardView/> } */}
+    <Router>
       <div>
         <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/new">New Tweet</Link>
-            </li>
-            <li>
-              <Link to="/dashboard">DashBoard</Link>
-            </li>
-          </ul>
-        </nav>
- 
-       
+          <Link to="/">Home</Link> <Link to="/new">New Tweet</Link> <Link to="/dashboard">DashBoard</Link>
+        </nav>     
           <Route path="/">
             <Tweet />
           </Route>
@@ -53,19 +41,15 @@ class App extends React.Component {
             <NewTweet/>
           </Route>
           <Route path="/dashboard">
+            <DashBoardView/>
           </Route>  
-
-    
       </div>
-    </Router> */}
- 
+   </Router> 
     </div>)
-  
   }
 }
 
 function mapStateToProps({ authedUser }) {
-
   return {
     loading : authedUser === null
   }

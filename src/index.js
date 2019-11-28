@@ -7,33 +7,17 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import reducer from './reducers'
 import middleware from './middleware'
-// import { composeWithDevTools } from 'remote-redux-devtools'
 
-// const composeEnhancers = composeWithDevTools({
-//   realtime: true,
-//   name: 'Your Instance Name',
-//   hostname: 'localhost',
-//   port: 8000 // the port your remotedev server is running at
-// })
+// init the store - start all reducers and all middleware
+const store = createStore(reducer, middleware)
 
-const store = createStore(reducer, middleware
-   // composeWithDevTools(middleware)
-)
-
-const router2 =  
+// Use provider to be able to pass the store to all children
+// Use router for links
+const router =  
     <Provider store={store}>
         <Router>
             <App/>            
         </Router>
     </Provider>;
 
-const router =  
-<Provider store={store}>
-     <App store={store}/>            
-</Provider>;
-
 ReactDOM.render(router, document.getElementById('root'));
-
-
-
-// ReactDOM.render(<App />, document.getElementById('root'))
