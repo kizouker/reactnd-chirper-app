@@ -16,9 +16,10 @@ class Tweet extends Component {
        <div> T id: {this.props.tweet.id} </div>
        <div> T author: {this.props.tweet.author} </div>
        <div> T timestamp: {this.props.tweet.timestamp} </div>
-       <div> reply button</div>
-       <div> like button  </div> */}
-      </div> 
+       <div> T replies {this.props.tweet.text} </div>
+       <div> T reply button {this.props.tweet.replies} </div>
+       <div> T replyingTo  {this.props.tweet.replyingTo} </div>
+      </div>
     )
   }
 }
@@ -49,7 +50,6 @@ class Tweet extends Component {
 
 // argumentet här är de som skickas in till reducern?
 
-
 function mapStateToProps({authedUser, users, tweets}, {id}){
   const tweet = tweets[id]
   const parentTweet = tweet ? tweets[tweet.replyTo] : null
@@ -60,8 +60,5 @@ function mapStateToProps({authedUser, users, tweets}, {id}){
     : null
   }
 }
-
-
-
 
 export default connect(mapStateToProps)(Tweet);

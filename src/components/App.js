@@ -11,10 +11,8 @@ import {
   Link
 } from "react-router-dom";
 import { connect } from 'react-redux'
-
 import { handleInitialData } from '../actions/shared'
   
-
 class App extends React.Component {
   componentDidMount(){
     this.props.dispatch(handleInitialData());
@@ -36,7 +34,6 @@ class App extends React.Component {
           <Route path="/">
             <Tweet />
           </Route>
-
           <Route path="/new">
             <NewTweet/>
           </Route>

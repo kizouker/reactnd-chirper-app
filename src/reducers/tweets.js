@@ -8,11 +8,12 @@ export default function tweets(state = {}, action){
                 ...state, // the current state spreaded - since we can't mutate 'state'
                 ...action.tweets, // the data, the tweets from the actionis spreaded as well
             }
-        // case CREATE_TWEET :
-        //     return {
-        //         ...state,
-        //         tweet, 
-        //     }
+        case CREATE_TWEET :
+            return {
+                ...state,
+                ...action.tweets, 
+                action.info
+            }
         default : 
             return state
     }

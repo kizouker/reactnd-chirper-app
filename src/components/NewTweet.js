@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {formatTweet, _saveTweet, _getUsers} from '../utils/_DATA.js'
+import { createTweet } from '../actions/tweets.js';
 
 class NewTweet extends Component {
     constructor(props) {
@@ -24,24 +25,23 @@ class NewTweet extends Component {
         
       handleChange(event) {
         this.setState({value: event.target.value});
-        //this.props.dispatch();
+        
       }
     
       handleSubmit(event) {
-        alert('A name was submitted: ' + this.state.value);
         let val = this.state.value;
-        let tweet = formatTweet( {users['tylermcginnis'].name, val, replyingTo=null});
+        alert('A name was submitted: ' + value);
         let users = _getUsers();
 
-        const formattedTweet = formatTweet({
-          users['tylermcginnis'].author,
-          author,
-          replyingTo
-        })
-    
+        let tweet = formatTweet( {
+            author :  users['tylermcginnis'].author,
+            text: val,
+            replyingTo : null
+          });
+       
+          this.props.dispatch(createTweet(this.props.tweets, tweet))
         console.log(tweet);
-        //_saveTweet(tweet);
-        //formatTweet()
+        _saveTweet(tweet);
         
         event.preventDefault();
       }
@@ -63,4 +63,10 @@ class NewTweet extends Component {
   }
 }
 
-export default NewTweet;
+export default connect(mapStateToProps)(NewTweet);
+
+function mapStateToProps( {tweets} ){
+  return { 
+      tweets: tweets
+    }
+  };
