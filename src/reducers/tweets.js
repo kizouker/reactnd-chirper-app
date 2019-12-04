@@ -10,9 +10,11 @@ export default function tweets(state = {}, action){
             }
         case CREATE_TWEET :
             return {
-                ...state,
-                ...action.tweets, 
-                action.info
+          ...state,
+          ...action.tweets,
+  
+             //   ...action.tweets, 
+               [action.tweet.id]: action.tweet,
             }
         default : 
             return state

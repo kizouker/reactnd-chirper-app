@@ -1,23 +1,12 @@
 import React, { Component } from 'react'
 import {formatTweet, _saveTweet, _getUsers} from '../utils/_DATA.js'
 import { createTweet } from '../actions/tweets.js';
+import { connect } from 'react-redux'
 
 class NewTweet extends Component {
     constructor(props) {
         super(props);
-        this.state = {value: ''}; // spara state i store istället - vi vill ha kvar våra nya tweets
-
-      // const tweet = {
-      //     "8xf0y6ziyjabvozdd253nd": { // generate new key
-      //       id: "8xf0y6ziyjabvozdd253nd",
-      //       text: "Shoutout to all the speakers I know for whom English is not a first language, but can STILL explain a concept well. It's hard enough to give a good talk in your mother tongue!",
-      //       author: "sarah_edo",
-      //       timestamp: 1518122597860,
-      //       likes: ['tylermcginnis'],
-      //       replies: ['fap8sdxppna8oabnxljzcv', '3km0v4hf1ps92ajf4z2ytg'],
-      //       replyingTo: null,
-      //     }
-      //   }
+        this.state = {value: ''}; // spara state i store istället - vi vill ha kvar våra nya tweets   
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -25,25 +14,23 @@ class NewTweet extends Component {
         
       handleChange(event) {
         this.setState({value: event.target.value});
-        
       }
     
       handleSubmit(event) {
         let val = this.state.value;
-        alert('A name was submitted: ' + value);
-        let users = _getUsers();
-
+        alert('A name was submitted: ' + val);
+        let users = this.props.users;
+        console.log(users);
         let tweet = formatTweet( {
-            author :  users['tylermcginnis'].author,
+          //author :  users['tylermcginnis'].name,
+            author :  users['tylermcginnis'].id,
             text: val,
             replyingTo : null
           });
-       
-          this.props.dispatch(createTweet(this.props.tweets, tweet))
-        console.log(tweet);
-        _saveTweet(tweet);
-        
-        event.preventDefault();
+        // export function formatTweet (tweet, author, authedUser, parentTweet)
+          console.log(tweet);
+          this.props.dispatch(createTweet(this.props.tweets, tweet))         
+          event.preventDefault();
       }
   render() {
     return (
@@ -65,8 +52,9 @@ class NewTweet extends Component {
 
 export default connect(mapStateToProps)(NewTweet);
 
-function mapStateToProps( {tweets} ){
+function mapStateToProps( {tweets, users} ){
   return { 
-      tweets: tweets
+      tweets: tweets,
+      users : users
     }
   };

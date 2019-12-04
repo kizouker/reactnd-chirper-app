@@ -8,10 +8,10 @@ export function receiveTweets(tweets){
     }
 }
 
-export function createTweet(tweets, info){
+export function createTweet(tweets, tweet){
     return {
         type: CREATE_TWEET,
-        tweets : tweets, 
-        info : info,
+        tweets, 
+        tweet
     }
 }

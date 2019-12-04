@@ -12,7 +12,7 @@ return (dispatch) => {
         .then(({users, tweets, id}) => {
             dispatch(receiveUsers(users));
             dispatch(receiveTweets(tweets));
-            dispatch(createTweet(tweets, info));
+         //   dispatch(createTweet(tweets, info));
             dispatch(setAuthedUsers(AUTHED_ID));
         })
     }

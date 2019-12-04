@@ -10,6 +10,7 @@ class DashBoardView extends Component {
     //console.log(this.props.store)
     return (
       <div>
+       
         <h3 className='center'> Your Timeline</h3>
         <ul className="dashboard-list">
           {console.log(this.props.tweetIds)}

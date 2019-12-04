@@ -20,6 +20,6 @@ export function formatTweet (tweet, author, authedUser, parentTweet) {
     parent: !parentTweet ? null : {
       author: parentTweet.author,
       id: parentTweet.id,
+     }
     }
-  }
-}
+  } 
