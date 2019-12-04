@@ -4,31 +4,41 @@ import {formatTweet } from '../utils/helpers'
 import TiArrowBackOutline from 'react-icons/lib/ti/arrow-back-outline'
 import TiHeartOutline from 'react-icons/lib/ti/heart-outline'
 import TiHeartFullOutline from 'react-icons/lib/ti/heart-full-outline'
-
+import NewTweet from './NewTweet'
 
 class Tweet extends Component {
   constructor(props){
     super(props);
     this.state = {
-      like : true
+      like : true,
+      reply : true
     };
-
     this.toggleLike = this.toggleLike.bind(this);
+    this.handleReply = this.handleReply.bind(this);
   }
   toggleLike = () => {
   //  let currentState = this.state.like;
-    this.setState( state => ({  like : !state.like }));
+    this.setState( state => ({  like : !state.like,
+                               }));
 
     // let className = this.state.like ? 'classLike' : 'classNotLike';
     console.log("Toggle like: " + this.state.like);
   }
+
+  handleReply = () => {
+    console.log("reply");
+    this.setState( state => ({  reply : !state.reply,
+                                }));
+   
+  
+  }
   render() {
-    const { like } = this.state;
+    const { like, reply } = this.state;
     // const { tweet } = this.props
     // const { id, timestamp, author } = this.props
 
     if (this.props.tweet === null || this.props.tweet === undefined) {
-      return <p>This Tweet doesn't existd</p>
+      return <p>This Tweet is empty</p>
     }   
     return (
       <div className="tweet">
@@ -38,17 +48,18 @@ class Tweet extends Component {
        <div> T timestamp: {this.props.tweet.timestamp} </div>
        <div> T text : {this.props.tweet.text} </div>
      
-    <button id="reply" >
-      <h3> <TiArrowBackOutline /> </h3>
-    </button>
+      <button id="reply" onClick={this.handleReply}> 
+        <TiArrowBackOutline/> 
+      </button>
+      { reply && (<NewTweet/>) }
 
       <button id="likeId" onClick={this.toggleLike}>   
         { like && (<TiHeartFullOutline/>) 
         } 
         { !like && (<TiHeartOutline/>) 
         } 
-         </button>
-      </div>
+      </button>
+    </div>
     )
   }
 }
